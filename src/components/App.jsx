@@ -14,6 +14,7 @@ function App() {
         setItems((prevItems) => {
             return [...prevItems, inputText]
         })
+        setInputText("");
     }
 
     return (
@@ -29,7 +30,7 @@ function App() {
       </div>
       <div>
         <ul>
-          {items.map((todoItem) => <li>{todoItem}</li>})
+          {items.map((todoItem) => <li>{todoItem}</li>)}
         </ul>
       </div>
     </div>
