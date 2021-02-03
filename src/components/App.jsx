@@ -1,13 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 
 function App() {
-  return (
-    <div className="container">
+
+    const [inputText, setInputText] = useState("");
+
+    function handleChange(event) {
+        const newValue = event.target.value;
+        setInputText(newValue);
+    }
+
+    return (
+        <div className="container">
       <div className="heading">
         <h1>To-Do List</h1>
       </div>
       <div className="form">
-        <input type="text" />
+        <input onChange={handleChange} type="text" value={inputText} />
         <button>
           <span>Add</span>
         </button>
@@ -18,7 +26,7 @@ function App() {
         </ul>
       </div>
     </div>
-  );
+    );
 }
 
 export default App;
